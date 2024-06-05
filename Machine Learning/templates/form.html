@@ -6,21 +6,46 @@
 <body>
     <h1>Form Rekomendasi</h1>
     <form action="/recommend" method="post">
-        <label for="preference">Apakah kamu lebih tertarik ke aktivitas di dalam kampus atau di luar kampus?</label>
+
+        <label for="nama_lengkap">Nama Lengkap:</label><br>
+        <input type="text" id="nama_lengkap" name="nama_lengkap"><br>
+
+        <label for="penyelenggara">Asal Perguruan Tinggi:</label><br>
+        <input type="text" id="penyelenggara" name="penyelenggara"><br>
+
+        <label for="program_studi">Program Studi:</label><br>
+        <input type="text" id="program_studi" name="program_studi"><br>
+        
+        <label for="semester">Semester Saat Ini:</label><br>
+        <input type="text" id="semester" name="semester"><br>
+        
+        <label for="goals">Apa goal yang ingin kamu capai?</label><br>
+        <textarea id="goals" name="goals" rows="4" cols="50"></textarea><br>
+
+        <label for="preferensi_kegiatan">Apakah kamu punya preferensi terhadap jenis kegiatan tertentu?</label><br>
+        <textarea id="preferensi_kegiatan" name="preferensi_kegiatan" rows="4" cols="50"></textarea><br>
+        
+        <label for="preferensi_bekerja">Apakah kamu lebih suka bekerja sendiri atau dalam tim?</label><br>
+        <select id="preferensi_bekerja" name="preferensi_bekerja">
+            <option value="Bekerja Sendiri">Bekerja Sendiri</option>
+            <option value="Dalam Tim">Dalam Tim</option>
+        </select><br>
+        
+        <label for="preference">Apakah kamu lebih tertarik aktivitas di dalam kampus atau di luar kampus?</label>
         <select id="preference" name="preference">
             <option value="Dalam Kampus">Dalam Kampus</option>
             <option value="Luar Kampus">Luar Kampus</option>
         </select>
+
         <br>
-        <label for="skills">Bisa diceritakan kamu tertarik untuk mengembangkan skill apa?</label>
+        <label for="skills">Bisakah diceritakan kamu tertarik untuk mengembangkan skill apa?</label>
         <textarea id="skills" name="skills" rows="4" cols="50"></textarea>
         <br>
-        <label for="past_activities">Bisa diceritakan mengenai kamu pernah ikut kegiatan apa saja?</label>
+        <label for="past_activities">Bisakah diceritakan mengenai kegiatan apa saja yang pernah kamu ikuti?</label>
         <textarea id="past_activities" name="past_activities" rows="4" cols="50"></textarea>
         <br>
-        <label for="penyelenggara">Asal Perguruan Tinggi:</label><br>
-        <input type="text" id="penyelenggara" name="penyelenggara"><br>
-        <label for="durasi">Durasi:</label><br>
+
+        <label for="durasi">Seberapa lama kamu ingin/bisa mengikuti kegiatan tersebut?</label><br>
         <input type="text" id="durasi" name="durasi"><br>
         <button type="submit">Submit</button>
     </form>
