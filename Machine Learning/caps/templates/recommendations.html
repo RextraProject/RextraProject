@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommendations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .recommendation {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Recommended Activities</h1>
+    {% if recommendations %}
+        {% for recommendation in recommendations %}
+            <div class="recommendation">
+                <h2>{{ recommendation['Posisi'] }}</h2>
+                <p><strong>Penyelenggara:</strong> {{ recommendation['Penyelenggara'] }}</p>
+                <p><strong>Deskripsi:</strong> {{ recommendation['Deskripsi'] }}</p>
+                <p><strong>Durasi:</strong> {{ recommendation['Durasi'] }}</p>
+                <p><strong>Persyaratan:</strong> {{ recommendation['Persyaratan'] }}</p>
+                <p><strong>Skill:</strong> {{ recommendation['Skill'] }}</p>
+                <p><strong>Lokasi:</strong> {{ recommendation['Lokasi'] }}</p>
+                <p><strong>Similarity Score:</strong> {{ recommendation['Similarity Score'] }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No recommendations found based on your input.</p>
+    {% endif %}
+</div>
+</body>
+</html>
