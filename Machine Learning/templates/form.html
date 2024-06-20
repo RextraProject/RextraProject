@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activity Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Activity Recommendation</h1>
+    <form action="/recommend" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="penyelenggara">Kamu berasal dari universitas mana?</label>
+            <select id="penyelenggara" name="penyelenggara">
+                <option value="Institut Teknologi Bandung">Institut Teknologi Bandung</option>
+                <option value="Institut Teknologi Sepuluh Nopember">Institut Teknologi Sepuluh Nopember</option>
+                <option value="UPN Veteran Jakarta">UPN Veteran Jakarta</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="preference">Kamu lebih tertarik aktivitas di dalam kampus atau di luar kampus?</label>
+            <select id="preference" name="preference">
+                <option value="Dalam Kampus">Dalam Kampus</option>
+                <option value="Luar Kampus">Luar Kampus</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="user_preference">Apakah kamu punya preferensi terhadap jenis kegiatan tertentu?</label>
+            <select id="user_preference" name="user_preference" required>
+                <option value="Kepanitiaan">Kepanitiaan</option>
+                <option value="Magang">Magang</option>
+                <option value="Organisasi Intra Kampus">Organisasi Intra Kampus</option>
+                <option value="Organisasi Luar Kampus">Organisasi Luar Kampus</option>
+                <option value="Student Chapter">Student Chapter</option>
+                <option value="Studi Independen">Studi Independen</option>
+                <option value="UKM">UKM</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="skills">Coba deskripsikan kegiatan seperti apa yang kamu inginkan!</label>
+            <textarea id="skills" name="skills" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="past_activities">Ceritakan kegiatan apa saja yang pernah kamu ikuti!</label>
+            <textarea id="past_activities" name="past_activities" rows="4" required></textarea>
+        </div>
+        <label for="cv">Upload Your CV (PDF):</label>
+        <input type="file" id="cv" name="cv" accept=".pdf"><br><br>
+        <div class="form-group">
+            <label for="durasi">Durasi kegiatan yang kamu inginkan</label>
+            <select id="durasi" name="durasi">
+                <option value="5 bulan">5 bulan</option>
+                <option value="6 bulan">6 bulan</option>
+                <option value="1 tahun">1 tahun</option>
+            </select>
+        </div>
+        <button type="submit">Dapatkan Rekomendasi</button>
+    </form>
+</div>
+</body>
+</html>
